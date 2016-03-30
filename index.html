@@ -28,7 +28,7 @@
 		</div>
 	</nav>
 	<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-		<a href="#modalLogin" class="modal-trigger btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+		<a href="#modalLogin" class="modal-trigger btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">add</i></a>
 	</div>
 	<div id="modalLogin" class="modal">
 		<div class="modal-content">
@@ -65,11 +65,13 @@
 			<section class="col m4 animated fadeInUp"
 				style="-webkit-animation-duration:{{$index * 300}}ms" 
 				  ng-repeat="recipe in recipes" id="recipe-list">
-				<article class="recipe card blue lighten-1">
-					<div class="card-content center-align">
+				<article class="recipe card lighten-1">
+					<div class="card-content center-align blue">
 						<h2 class="card-title truncate">{{ recipe.name }}</h2>
-						<h5 class="center truncate">{{ recipe.classification }}</h5>
-						<p class="blue-text text-darken-4">{{ recipe.text }}</p>
+						<h5 class="center truncate"><sub>{{ recipe.classification }}</sub></h5>
+					</div>
+					<div class="card-content center-align">
+						<p class="text-darken-4">{{ recipe.text }}</p>
 					</div>
 				</article>
 			</section>
