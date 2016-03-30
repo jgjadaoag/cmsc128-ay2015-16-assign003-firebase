@@ -1,20 +1,65 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-	</head>
-	<body>
-		<section id="recipe-list">
-		</section>
-		<template id="recipe-template">
-			<article class="recipe">
-				<header>
-					<h1>Recipe Title</h1>
-					<p>Classification</p>
-				</header>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+	<title>Starter Template - Materialize</title>
+
+	<!-- CSS	-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+	<nav class="light-blue lighten-1" role="navigation">
+		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Recipe Desu</a>
+		</div>
+	</nav>
+	<a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i><div id="modalLogin" class="modal">
+	<div class="modal-content">
+		<h2 class="center-align">Add New Recipe</h2>
+		<div class="center-align">
+			<div class="divider"></div>
+			<form class="col s12">
+				<div class="row center-align">
+					<div class="input-field col m10 offset-m1 blue-text">
+						<input id="icon_prefix" type="text" class="validate">
+						<label for="icon_prefix">Name</label>
+					</div>
+					<div class="input-field col m10 offset-m1 blue-text ">
+						<input id="icon_classification" type="text" class="validate">
+						<label for="icon_password">Classification</label>
+					</div>
+				</div>
+			</form>
+			<div class="divider"></div>
+			<p>
+				<a href="#" class="btn btn-flat white modal-close">Cancel</a> &nbsp;
+				<a href="#" class="waves-effect waves-blue blue btn btn-flat modal-action modal-close">Add Recipe</a>
+			</p>
+			</div>
+		</div>
+	</div>
+
+	<section class="col m4 animated fadeInUp"
+		style="-webkit-animation-duration:{{$index * 300}}ms" 
+		ng-repeat="recipe in recipes">
+		<section class="section" id="recipe-list">
+			<article class="recipe container col">
+				<h2 class="center light-blue-text">Recipe Title</h2>
+				<h5 class="center">Classification</h5>
 				<p>Text</p>
 			</article>
-		</template>
-		<script src="script.js"></script>
+		</section>
+	</section>
+				
+
+
+	<!--	Scripts-->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="js/materialize.js"></script>
+	<script src="js/init.js"></script>
+
 	</body>
 </html>
